@@ -21,6 +21,7 @@
     return newarray;
   }
   
+  //Write your own replacement for reduce
   export function myReduce(myarray, myfunction, initval) {
     let totalVal = initval;
   
@@ -31,19 +32,41 @@
     return totalVal;
   } //myReduce
 
+  export function myReject(myarray, myfunction) {
+    let newarray = [];
 
-  
+    myarray.forEach(function (val) {
+      if (!myfunction(val)) {
+        newarray.push(val);
+      }
+    });
+
+    return newarray;
+  } //myReject
+
+
+  // Write two functions, every and some, that behave like these methods, 
+  // except that they take the array as their first argument rather than being a method.
+  // https://github.com/johnstonbl01/eloquentjs-exercises/tree/master/ch05
+  export function myEvery(myArray, testFun) {
+    let retVal = true; 
+    myArray.forEach( function (val) {
+      if (false === testFun(val)) {
+        retVal = false;
+      }
+    }); 
+    return retVal; 
+  } //myEvery
+
+  export function mySome(myArray, testFun) {
+    let retVal = false; 
+    myArray.forEach( function (val) {
+      if (true === testFun(val)) {
+        retVal = true;
+      }
+    }); 
+    return retVal; 
+  } //mySome
+
   //Use reduce to implement map/filter/reject
 
-//   Write two functions, every and some, that behave like these methods, except that they take the array as their first argument rather than being a method.
-//https://github.com/johnstonbl01/eloquentjs-exercises/tree/master/ch05
-// // Your code here.
-
-// console.log(every([NaN, NaN, NaN], isNaN));
-// // → true
-// console.log(every([NaN, NaN, 4], isNaN));
-// // → false
-// console.log(some([NaN, 3, 4], isNaN));
-// // → true
-// console.log(some([2, 3, 4], isNaN));
-// → false
