@@ -69,4 +69,31 @@
   } //mySome
 
   //Use reduce to implement map/filter/reject
+  export function reduceMap(myArray, myFunction) {
+    function mapToFunction(prevVal, val) {
+      prevVal.push(myFunction(val));
+      return prevVal;
+    }
+    return myArray.reduce(mapToFunction, []); 
+  } //reduceMap
 
+  export function reduceFilter(myArray, myFunction) {
+    function mapToFunction(prevVal, val) {
+      if (myFunction(val) === true) {
+        prevVal.push(val);
+      }
+      return prevVal;      
+    }
+    return myArray.reduce(mapToFunction, []); 
+  } //reduceFilter
+
+
+  export function reduceReject(myArray, myFunction) {
+    function mapToFunction(prevVal, val) {
+      if (myFunction(val) === false) {
+        prevVal.push(val);
+      }
+      return prevVal;      
+    }
+    return myArray.reduce(mapToFunction, []); 
+  } //reduceMap
