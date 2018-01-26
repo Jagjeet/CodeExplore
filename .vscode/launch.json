@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            //Configuration based on Medium article and gist below:
+            //https://medium.com/@mattmazzola/how-to-debug-jest-tests-with-vscode-48f003c7cb41
+            //https://gist.github.com/mattmazzola/34cf58406abae71b5a534d959049620b#file-launch-jest-json
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Tests",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "args": [
+                "-i"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+        }
+    ]
+}
